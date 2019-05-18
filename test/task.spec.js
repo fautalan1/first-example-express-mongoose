@@ -2,13 +2,13 @@ const request = require('supertest');
 const server = require('../src/server.js');
 const assert = require('assert');
 
-describe('/tasks', () => {
+describe('/', () => {
   it('should get status ok', () => {
     return request(server)
-      .get('/tasks')
+      .get('/task/list')
       .expect(200)
       .then(response => {
-        assert(response.body.tasks.length, 1);
+        assert.strictEqual(response.body.length, 1);
       });
   });
 });
