@@ -5,7 +5,7 @@
     "lint-diff": "git diff --name-only --cached --relative | grep \\\\.js$ | xargs ./node_modules/eslint/bin/eslint.js",
     "lint-fix": "eslint app migrations config test --fix",
     "start": "nodemon index.js",
-    "test": "NODE_ENV=test mocha test/main.js --timeout 5000 --recursive --exit"
+    "test": "NODE_ENV=test mocha test/main.js --timeout 10000 --recursive --exit"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
