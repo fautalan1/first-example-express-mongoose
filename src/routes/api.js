@@ -1,12 +1,10 @@
-const todos = require('../todos/todos');
+'use strict';
 
-const { Router } = require('express');
-const { isString } = require('lodash');
+const express = require('express');
+const { findAll, save, recover } = require('../controllers/task');
 
-const router = Router();
-
-router.get('/list', (req, body) => {
-  body.status(200).json([{ name: 'ivanGATo' }]);
-});
-
-module.exports = router;
+const api = express.Router();
+api.put('/task/create', save);
+api.post('/task/recover', recover);
+api.get('/tasks', findAll);
+module.exports = api;

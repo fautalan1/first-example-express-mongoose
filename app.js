@@ -1,10 +1,18 @@
-const app = require('./src/server.js');
-const dotenv = require('dotenv');
+'use strict';
 
-dotenv.config();
-const port = process.env.PORT || 3001;
+const express = require('express');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
-app.listen(port, () => {
-  /* eslint-disable no-console */
-  console.log(`Server running on port ${port}`);
-});
+const api = require('./src/routes/api');
+
+const app = express();
+
+app.use(morgan('dev'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false, useNewUrlParser: true }));
+
+app.use('/api', api);
+
+module.exports = app;
