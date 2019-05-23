@@ -26,7 +26,8 @@ it('should get a task', done => {
           assert.strictEqual(res.body[0].description, 'jugar en primera');
           done();
         });
-    });
+    })
+    .catch(error => done(error));
 });
 
 it('should get a task by name', done => {
@@ -44,5 +45,6 @@ it('should get a task by name', done => {
           assert.strictEqual(res.body[0].description, 'jugar en primera');
           done();
         });
-    });
+    })
+    .catch(error => done(error));
 });
