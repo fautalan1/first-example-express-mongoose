@@ -16,7 +16,9 @@ describe('/tests/main.js', () => {
   });
 
   beforeEach(done => {
-    db.dropDatabase().then(() => done());
+    db.dropDatabase()
+      .then(() => done())
+      .catch(err => done(err));
   });
 
   importTest('Task', './task.spec.js');
