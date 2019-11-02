@@ -16,7 +16,7 @@
     "factory-girl": "^5.0.4",
     "mockgoose": "^8.0.2",
     "moment": "^2.22.2",
-    "mongoose": "^5.0.1",
+    "mongoose": "^5.7.5",
     "mongoose-pagination": "^1.0.0",
     "morgan": "^1.9.1",
     "nock": "^9.6.1"
